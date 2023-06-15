@@ -1,32 +1,31 @@
-from cosas import Alumno
+from cosas import Alumno, Perro
 
 def main():
-    """
-    al1 = Alumno()
+    al1 = Alumno("Jose", 19, "ICO")
+    print(vars(al1))
+    al1.__nombre = "Diego"
+    print(vars(al1))
+    al1.set_nombre("María")
+    print(vars(al1))
+    print("----- To String -----")
     print(al1)
-    al2 = Alumno()
-    print(al1.facultad)
-    print(al2.facultad)
-    print((Alumno.facultad))
-    # OJO
-    print('---------------------')
-    Alumno.facultad = 'FES Aragon EDOMEX'
-    print(al1.facultad)
-    print(al2.facultad)
-    print((Alumno.facultad))
-    print('--------- Un vistazo a los objetos ------------')
-    print(vars(al1))
-    print(vars(al2))
-    print('------- Modificar atributos públicos -------')
-    al1.edad = 999
-    print(vars(al1))
-    print(vars(al2))
-    """
-    al1 = Alumno("Diego", 19, "ICO")
-    al2 = Alumno("Montse", 20, "Derecho")
-    print(vars(al1))
-    al1.__edad = 333
-    print(al1.__edad)
-    print(vars(al1))
+    al1.set_edad(999)
+    print(al1)
+    al1.estudiar(4)
+    print("----- PERRO -----")
+    perro1 = Perro("Poddle", 2, 0.35)
+    print(vars(perro1))
+    perro1.raza = "De la calle" # set en notación Python
+    print(vars(perro1))
+    perro1.__raza = "Otra"
+    print(vars(perro1))
+    perro1.edad = 12
+    perro1.estatura = 0.43
+    print(perro1)
+    cachorro = Perro.es_cachorro(perro1.edad)
+    print(cachorro)
+    Perro.dormir()
+    danes = Perro.perro_grande(0.8)
+    print(danes)
 
 main()
